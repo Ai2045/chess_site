@@ -1,4 +1,5 @@
 <script>
+  // Importa i moduli necessari da Svelte e altre dipendenze
   import { onMount, onDestroy, createEventDispatcher } from "svelte";
   import { Chess } from "chess.js";
   import { Chessground } from "chessground";
@@ -6,19 +7,20 @@
   import "../../node_modules/chessground/assets/chessground.brown.css";
   import "../../node_modules/chessground/assets/chessground.cburnett.css";
 
-  export let sanMoves = ""; // Input SAN moves as a string separated by spaces
-  export let chessMode = ""; // Input chess mode (play, analyze, etc.)
+  // Crea un dispatcher di eventi
   const dispatch = createEventDispatcher();
+  
+  // Dichiarazione delle variabili reactive
+  export let sanMoves = ""; // Mosse SAN in ingresso come stringa separate da spazi
+  export let chessMode = ""; // Modalità scacchiera (gioco, analisi, ecc.)
   let chess = new Chess();
   let ground;
-  let timeouts = []; // Array to keep track of timeouts
-  // Additional reactive variable to keep track of the current move index
-  let currentMoveIndex = 0;
-  let isUserMoveDifferent = false; //move from user
-  let gameTurn = "white";
-  
-  onMount(() => {
+  let timeouts = []; // Array per tenere traccia dei timeout
+  let currentMoveIndex = 0; // Indice della mossa corrente
+  let isUserMoveDifferent = false; // Mossa dall'utente
+  let gameTurn = "white"; // Turno di gioco iniziale
 
+  onMount(() => {
     ground = Chessground(document.getElementById("chessboard"), {
       fen: chess.fen(), // Set the initial position
       highlight: {
