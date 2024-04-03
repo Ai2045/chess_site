@@ -1,10 +1,10 @@
 <script>
   // Importa i moduli necessari da Svelte Routing e i componenti personalizzati
   import { Router, Route } from 'svelte-routing';
-  import Analyze from './lib/Analyze.svelte'; // Importa il componente per l'analisi
-  import Game from './lib/Game.svelte';       // Importa il componente per il gioco
-  import SideBar from './lib/Sidebar.svelte'; // Importa il componente per la barra laterale
-  import Footer from './lib/Footer.svelte';   // Importa il componente per il piè di pagina
+  import Analyze from '../src/lib/Analyze.svelte'; // Importa il componente per l'analisi
+  import Game from '../src/lib/Game.svelte';       // Importa il componente per il gioco
+  import SideBar from '../src/lib/Sidebar.svelte'; // Importa il componente per la barra laterale
+  import Footer from '../src/lib/Footer.svelte';   // Importa il componente per il piè di pagina
 </script>
 
 <Router>
