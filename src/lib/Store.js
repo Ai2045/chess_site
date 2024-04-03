@@ -5,7 +5,7 @@ import Papa from 'papaparse';
 // Funzione asincrona per caricare i dati dei giochi
 async function loadGamesData() {
     // Effettua una richiesta per ottenere il file CSV
-    const response = await fetch('../src/assets/games.csv');
+    const response = await fetch('./games.csv');
     // Legge il testo CSV dalla risposta
     const csvText = await response.text();
     let parsedGamesData; // Variabile per memorizzare i dati dei giochi dopo il parsing

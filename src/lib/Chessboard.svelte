@@ -39,7 +39,7 @@
               (move) => move.from === orig && move.to === dest
             );
             if (!isLegal) {
-              let illegalAudio = new Audio("../src/assets/illegal.mp3");
+              let illegalAudio = new Audio("./illegal.mp3");
               ground.set({ fen: chess.fen() });
               illegalAudio.play();
               console.log("Illegal move");
@@ -57,7 +57,7 @@
                   });
                   ground.set({ fen: chess.fen() });
                   checkChessLogic(result);
-                  let promotionAudio = new Audio("../src/assets/promote.mp3");
+                  let promotionAudio = new Audio("./promote.mp3");
                   promotionAudio.play();
                 });
               } else {
@@ -144,7 +144,7 @@
     if (chess.inCheck()) {
       let checkColor = chess.turn() === "w" ? "white" : "black";
       //add sound
-      let checkAudio = new Audio("../src/assets/move-check.mp3");
+      let checkAudio = new Audio("./move-check.mp3");
       checkAudio.play();
       //add check animation
       ground.set({ check: checkColor });
@@ -156,22 +156,22 @@
     // check if the move is a capture
     if (moves.captured) {
       //add sound
-      let captureAudio = new Audio("../src/assets/capture.mp3");
+      let captureAudio = new Audio("./capture.mp3");
       captureAudio.play();
     } else {
       //add sound
-      let moveAudio = new Audio("../src/assets/move-self.mp3");
+      let moveAudio = new Audio("./move-self.mp3");
       moveAudio.play();
     }
     // Check for castling
     if (moves.flags.includes("k")) {
       //add sound
-      let castleAudio = new Audio("../src/assets/castle.mp3");
+      let castleAudio = new Audio("./castle.mp3");
       castleAudio.play();
     }
     // Check for checkmate
     if (chess.isCheckmate()) {
-      let checkmateAudio = new Audio("../src/assets/game-end.mp3");
+      let checkmateAudio = new Audio("./game-end.mp3");
       let winner = chess.turn() === "w" ? "Black" : "White";
       checkmateAudio.play();
       dispatch("gameEnd", { winner:winner, reason: "Checkmate" });

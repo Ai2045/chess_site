@@ -1,8 +1,8 @@
 <script>
   // Importa i componenti necessari
-  import Pagination from '../lib/Pagination.svelte';  // Componente per la paginazione
-  import Chessboard from '../lib/Chessboard.svelte';  // Componente per la scacchiera
-  import Store from '../lib/Store.js';                // Store per i dati delle partite
+  import Pagination from './Pagination.svelte';  // Componente per la paginazione
+  import Chessboard from './Chessboard.svelte';  // Componente per la scacchiera
+  import Store from './Store.js';                // Store per i dati delle partite
 
   // Dichiarazioni delle variabili reactive
   let games = [];               // Array delle partite
