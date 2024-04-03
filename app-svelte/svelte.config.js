@@ -1,8 +1,10 @@
-import sveltePreprocess from 'svelte-preprocess';
+
+import adapter from '@sveltejs/adapter-vercel';
 
 export default {
-  preprocess: sveltePreprocess({
-    // opzioni per svelte-preprocess
-  }),
-  // altre configurazioni...
+	kit: {
+		adapter: adapter({
+			// see below for options that can be set here
+		})
+	}
 };
